@@ -115,7 +115,7 @@ public class SpiderApplication {
         // 创建题目markdown文件
         String markdownQuestionName = settings.getConf("question_markdown_filename.prefix");
         if(settings.getConf("question_markdown_filename.include_question_id").equals("true")){
-            markdownQuestionName = markdownQuestionName + "_" +questionFrontendId;
+            markdownQuestionName = markdownQuestionName +questionFrontendId;
         }
         if(settings.getConf("question_markdown_filename.include_question_name").equals("true")){
             if(settings.getConf("question_markdown_filename.zh_cn").equals("true")){
