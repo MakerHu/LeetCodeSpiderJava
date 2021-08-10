@@ -82,7 +82,12 @@ public class FileTools {
         int readByte = 0;
 
         String[] newPathSplit = newPath.split("/");
-        String packageStr = "package " + settings.getConf("package_path") + "." +newPathSplit[newPathSplit.length-1] + ";";
+        String packageStr = "package ";
+        if (!settings.getConf("base_package").equals("")){
+            packageStr += settings.getConf("base_package") + ".";
+        }
+        packageStr += newPathSplit[newPathSplit.length-1] + ";";
+
         out.write(packageStr.getBytes(StandardCharsets.UTF_8),0,packageStr.length());
         while((readByte = in.read(buffer)) != -1){
             out.write(buffer, 0, readByte);
