@@ -46,23 +46,13 @@ public class FileTools {
         }
     }
 
-    public static void creatFolder(String pathname){
+    public static boolean creatFolder(String pathname){
         File file=new File(pathname);
         if(!file.exists()){//如果文件夹不存在
             file.mkdir();//创建文件夹
+            return true;
         }else{
-            System.out.println(pathname);
-            System.out.println("该文件夹已存在！是否覆盖(y/n)?");
-            while (true){
-                String isOverwrite = scanner.next();
-                if(isOverwrite.equals("y")){
-                    break;
-                }
-                if (isOverwrite.equals("n")){
-                    System.exit(0);
-                }
-                System.out.println("无效输入，请重新输入(y/n)：");
-            }
+            return false;
         }
     }
 
@@ -86,7 +76,15 @@ public class FileTools {
         if (!settings.getConf("base_package").equals("")){
             packageStr += settings.getConf("base_package") + ".";
         }
-        packageStr += newPathSplit[newPathSplit.length-1] + ";";
+
+        if(settings.getConf("sort_by_time").equals("true")){
+            packageStr += newPathSplit[newPathSplit.length-3] + ".";
+            packageStr += newPathSplit[newPathSplit.length-2] + ".";
+            packageStr += newPathSplit[newPathSplit.length-1] + ";";
+        }else{
+            packageStr += newPathSplit[newPathSplit.length-1] + ";";
+        }
+
 
         out.write(packageStr.getBytes(StandardCharsets.UTF_8),0,packageStr.length());
         while((readByte = in.read(buffer)) != -1){

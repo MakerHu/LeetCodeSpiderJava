@@ -90,15 +90,17 @@
 
 ```properties
 # Java项目中要存放解题的根文件夹，如 E:/LeetCode/src/com/leetcode
-question_location = E:/000_collection/myLeetCode/src/com/leetcode
+question_location = E:/200_study/220_self_study/224_category/01_exercise/LeetCode/src/com/leetcode
 
 # 解题所在的包 如：com.leetcode 若没有(也就是放在src文件夹下)则为空
 base_package = com.leetcode
 
-# 解题文件夹名称的前缀（可以是任意字符串）
+# 解题文件夹名称的前缀（可以是任意字符串，但不能为空，且要以小写字母开头）
 folder.prefix = p
 # 解题文件夹是否包含力扣题目名（true 或 false）
 folder.include_question_name = true
+# 解题文件夹是否按照时间分类（true 或 false）
+sort_by_time = true
 
 # 用来存储题目信息的markdown文件的前缀（可以是任意字符串）
 question_markdown_filename.prefix = p
@@ -219,15 +221,17 @@ settings.properties文件：
 
 ```properties
 # Java项目中要存放解题的根文件夹，如 E:/LeetCode/src/com/leetcode
-question_location = E:/000_collection/myLeetCode/src/com/leetcode
+question_location = E:/200_study/220_self_study/224_category/01_exercise/LeetCode/src/com/leetcode
 
 # 解题所在的包 如：com.leetcode 若没有(也就是放在src文件夹下)则为空
 base_package = com.leetcode
 
-# 解题文件夹名称的前缀（可以是任意字符串）
+# 解题文件夹名称的前缀（可以是任意字符串，但不能为空，且要以小写字母开头）
 folder.prefix = p
 # 解题文件夹是否包含力扣题目名（true 或 false）
 folder.include_question_name = true
+# 解题文件夹是否按照时间分类（true 或 false）
+sort_by_time = true
 
 # 用来存储题目信息的markdown文件的前缀（可以是任意字符串）
 question_markdown_filename.prefix = p
